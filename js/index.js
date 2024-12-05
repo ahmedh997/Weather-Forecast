@@ -47,7 +47,7 @@ function displayWeather(weatherData) {
         <div class="today forecast">
             <div class="forecast-header">
                 <div class="day"><i class="fa-solid fa-cloud-sun-rain"></i> Current weather</div>
-                <div class="date">${weatherData.current.last_updated}</div>
+                <div class="date">${new Date(today.last_updated).toLocaleDateString("en-GB", { weekday: "long", month: "long", day: "numeric" })}</div>
             </div>
             <div class="forecast-content">
                 <h1 class="location">${weatherData.location.name}</h1>
@@ -71,7 +71,7 @@ function displayWeather(weatherData) {
         weatherDiv += `
             <div class="forecast">
                 <div class="forecast-header">
-                    <div>${new Date(forecast.date).toLocaleDateString()}</div>
+                    <div>${new Date(forecast.date).toLocaleDateString("en-GB", { weekday: "long", month: "long", day: "numeric" })}</div>
                 </div>
                 <div class="forecast-content">
                     <div class="forecast-icon">
